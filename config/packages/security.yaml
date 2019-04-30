@@ -23,16 +23,17 @@ security:
                 name: RememberConundrum
                 secret: '%kernel.secret%'
                 lifetime: 604800 # 1 week in seconds
-                path: app_homepahe
+                path: conundrum_homepage
             logout:
                 path: app_logout
-                target: app_homepage
+                target: conundrum_homepage
 
     role_hierarchy:
         ROLE_ADMIN: ROLE_USER
 
     access_control:
         - { path: ^/$, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/subscription, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/admin, roles: ROLE_ADMIN }
         - { path: ^/, roles: ROLE_USER }

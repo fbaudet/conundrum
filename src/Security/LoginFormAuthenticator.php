@@ -85,7 +85,7 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator
             return new RedirectResponse($targetPath);
         }
 
-        return new RedirectResponse($this->router->generate('app_homepage'));
+        return new RedirectResponse($this->router->generate('conundrum_homepage'));
     }
 
     protected function getLoginUrl()
