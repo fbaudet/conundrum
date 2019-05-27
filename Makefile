@@ -9,4 +9,5 @@ fixtures:
 	${SYMFONY} doctrine:fixtures:load --no-interaction
 
 test:
+	./bin/test
 	./bin/phpunit
