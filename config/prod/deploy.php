@@ -23,9 +23,8 @@ return new class extends DefaultDeployer
         $this->runRemote('cp ../../env/.env.local .env');
     }
 
-    // run some local or remote commands after the deployment is finished
-    public function beforeFinishingDeploy()
+    public function beforePublishing()
     {
-        $this->runRemote('php bin/console doctrine:migrations:migrate --no-interaction');
+        $this->runRemote('export `cat .env` && php bin/console doctrine:migrations:migrate --no-interaction');
     }
 };
